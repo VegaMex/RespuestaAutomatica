@@ -19,7 +19,7 @@ public class Receiver extends BroadcastReceiver {
             SmsMessage SMessage = SmsMessage.createFromPdu((byte[]) pdus[i]);
             String sender = SMessage.getOriginatingAddress();
 
-            if(!App.plus().equals("")){
+            if(!App.plus().equals("+")){
                 if(sender.equals(App.plus())) {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(sender, null, App.mensaje, null, null);
