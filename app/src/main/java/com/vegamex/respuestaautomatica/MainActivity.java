@@ -12,6 +12,7 @@ import android.provider.Telephony;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,10 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnMensaje:
-                App.mensaje = btnMensaje.getText().toString();
+                App.mensaje = txtMensaje.getText().toString();
+                Toast.makeText(this, "El mensaje ahora es: " + "\n" + App.mensaje, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnNumero:
-                App.numero = btnNumero.getText().toString();
+                App.numero = txtNumero.getText().toString();
+                Toast.makeText(this, "El número ahora es: " + "\n" + App.numero, Toast.LENGTH_SHORT).show();
                 break;
         }
     }
